@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29403.142
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrimerWebApi", "PrimerWebApi\PrimerWebApi.csproj", "{429B8F77-5230-4AB2-9144-210BA6D33E0A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimerWebApiTest", "PrimerWebApiTest\PrimerWebApiTest.csproj", "{E9CF47B8-FD70-4835-9F48-2685C197A63A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimerWebApiTest", "PrimerWebApiTests\PrimerWebApiTests.csproj", "{E9CF47B8-FD70-4835-9F48-2685C197A63A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
