@@ -1,0 +1,45 @@
+version: "3.8"
+services:
+
+  web:
+    build: ./
+    image: web-api-demo
+    container_name: web
+    restart: on-failure
+    networks:
+      - demo
+    ports:
+      - 8080:80
+    environment:
+      DATABASE_USERNAME: demo
+      DATABASE_PASSWORD: demo
+      DATABASE_HOST: mysql
+      DATABASE_SCHEMA: demo
+    volumes:
+      - web-sql:/app/sql
+    depends_on: 
+      - mysql
+
+  mysql:
+    image: mysql:8.0.19
+    container_name: mysql
+    restart: always
+    networks:
+      - demo
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_USER: demo
+      MYSQL_PASSWORD: demo
+      MYSQL_DATABASE: demo
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - web-sql:/docker-entrypoint-initdb.d/
+
+volumes:
+  mysql-data:
+  web-sql:
+
+networks:
+  demo:
+    name: demo
+    driver: bridge
